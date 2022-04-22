@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Reservas.Domain.Repositories
 {
-        public interface ReservaRepositories : IRepository<Reserva, Guid>
+    public interface ReservaRepositories : IRepository<Reserva, Guid>
     {
-        Task RemoveAsync(Reserva obj);
+        Task UpdateAsync(Reserva obj);
     }
 }

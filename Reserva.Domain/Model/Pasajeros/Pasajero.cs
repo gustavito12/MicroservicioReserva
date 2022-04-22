@@ -1,6 +1,5 @@
 ﻿using Reservas.Domain.Event.Pasajeros;
 using Reservas.Domain.Model.Pasajeros.ValueObjects;
-using Reservas.Domain.Model.Pasajeros.ValueObjects;
 using ShareKernel.Core;
 using System;
 using System.Collections.Generic;

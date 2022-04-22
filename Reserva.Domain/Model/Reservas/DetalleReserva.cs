@@ -26,5 +26,8 @@ namespace Reservas.Domain.Model.Reservas
             NumTicket = numTicket;   
         }
 
+        public DetalleReserva()
+        {
+        }
     }
 }
