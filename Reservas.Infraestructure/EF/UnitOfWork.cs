@@ -1,4 +1,5 @@
 ﻿using Reservas.Domain.Repositories;
+using Reservas.Infraestructure.EF.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,17 @@ namespace Reservas.Infraestructure.EF
 {
     public class UnitOfWork : IUnitOfWorks
     {
-        public Task Commit()
+
+        private readonly WriteDbContext _context;
+
+        public UnitOfWork(WriteDbContext context)
         {
-            return Task.CompletedTask;
+            _context = context;   
+        }
+
+        public async Task Commit()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

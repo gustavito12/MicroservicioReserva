@@ -14,14 +14,14 @@ namespace Reservas.Domain.Model.Reservas
      
         public DateTime FechaReserva { get; private set; }
         public MinimoPago Importe { get; private set; }
-        public bool Estado { get; private set; }
+        public int Estado { get; private set; }
         public int NumTicket { get; private set; }
 
-        internal DetalleReserva(DateTime fechaReserva, decimal importe,bool estado, int numTicket)
+        internal DetalleReserva(DateTime fechaReserva, decimal importe,int estado, int numTicket)
         {
             Id = Guid.NewGuid();
             FechaReserva = fechaReserva;
-            Importe = importe;
+            Importe = new MinimoPago(0m);
             Estado = estado;
             NumTicket = numTicket;   
         }

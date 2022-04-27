@@ -16,7 +16,7 @@ namespace ReservaCOnsolaUI
 
 
             Reserva objReserva = new Reserva();
-            objReserva.CargaReservaDetalle(DateTime.Now,500.5m,true,123);
+            objReserva.CargaReservaDetalle(DateTime.Now,500.5m,1,123);
             objReserva.CargaReservaPago(1,DateTime.Now,1,"123456",52222.0m,250.5m);
             objReserva.RegistrarReserva();
 

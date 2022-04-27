@@ -6,35 +6,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Reservas.Infraestructure.EF.Contexts;
 
 namespace Reservas.Infraestructure.EF.Repository
 {
     public class ReservaRepository : ReservaRepositories
     {
-        public Task CreateAsync(Reserva obj)
-        {
-            Console.WriteLine($"Insertando la Reserva { obj.IdReserva }");
 
-            return Task.CompletedTask;
+        public readonly DbSet<Reserva> _reservas;
+
+        public ReservaRepository(WriteDbContext context)
+        {
+            _reservas = context.Reserva;
+        }
+        public async Task CreateAsync(Reserva obj)
+        {
+            await _reservas.AddAsync(obj);
         }
 
-        public Task FindByIdAsync(Guid id)
+        public async Task<Reserva> FindByIdAsync(Guid id)
         {
-            Console.WriteLine($"Retornando la Reserva { id }");
-
-            return null;
+            return await _reservas.Include("_detalle")
+                        .SingleAsync(x => x.Id == id);
         }
 
         public Task UpdateAsync(Reserva obj)
         {
-            Console.WriteLine($"Actualizando la Reserva { obj.IdReserva }");
+            _reservas.Update(obj);
 
-            return Task.CompletedTask;
+            return Task.CompletedTask; 
         }
 
-        Task<Reserva> IRepository<Reserva, Guid>.FindByIdAsync(Guid id)
-        {
-            throw new NotImplementedException();
-        }
+        //Task<Reserva> IRepository<Reserva, Guid>.FindByIdAsync(Guid id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

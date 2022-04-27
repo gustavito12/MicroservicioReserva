@@ -25,12 +25,12 @@ namespace Reservas.Domain.Model.Reservas
             IdReserva = idReserva;
         }
 
-        public Reserva()
+        private Reserva()
         {
-            Id = Guid.NewGuid();
+            
         }
 
-        public void CargaReservaDetalle(DateTime fechaReserva, decimal importe, bool estado,int numTicket)
+        public void CargaReservaDetalle(DateTime fechaReserva, decimal importe, int estado,int numTicket)
         {        
             Detalle = new DetalleReserva(fechaReserva, importe, estado, numTicket);
         }
@@ -42,7 +42,7 @@ namespace Reservas.Domain.Model.Reservas
 
         public void RegistrarReserva()
         {
-            var evento = new ReservaRealizada(Id, IdReserva, Detalle, DetallePago);
+            var evento = new ReservaRealizada(Id, IdReserva);
             AddDomainEvent(evento);
         }
     }

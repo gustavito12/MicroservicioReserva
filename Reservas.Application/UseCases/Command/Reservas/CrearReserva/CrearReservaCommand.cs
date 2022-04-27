@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Reservas.Application.Dto.Reserva;
 using Reservas.Domain.Model.Reservas;
 using System;
 using System.Collections.Generic;
@@ -12,12 +13,12 @@ namespace Reservas.Application.UseCases.Command.Reservas.CrearReserva
     {
         private CrearReservaCommand() { }
 
-        public CrearReservaCommand(DetalleReserva detalle)
+        public CrearReservaCommand(DetalleReservaDto detalle)
         {
             Detalle = detalle;
         }
 
-        public DetalleReserva Detalle { get; set; }
+        public DetalleReservaDto Detalle { get; set; }
 
     }
 }
