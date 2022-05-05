@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Reservas.Application.Dto.Reserva;
 using Reservas.Application.UseCases.Command.Reservas.CrearReserva;
 using Reservas.Application.UseCases.Queries.Reservas.GetReservaById;
+using Reservas.Application.UseCases.Queries.Reservas.SearchReserva;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,18 @@ namespace Reservas.WebApi.Controllers
                 return NotFound();
 
             return Ok(result);
+        }
+
+        [Route("search")]
+        [HttpPost]
+        public async Task<IActionResult> Search([FromBody] SearchReservaQuery query)
+        {
+            var reservas = await _mediator.Send(query);
+
+            if (reservas == null)
+                return BadRequest();
+
+            return Ok(reservas);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Reservas.Application.UseCases.Queries.Reservas.GetReservaById
                 {
                     Id = objReserva.Id,
                     IdReserva = objReserva.IdReserva,
-                    Detalle = objReserva.Detalle
+                    //Detalle = objReserva.Detalle
 
                 };     
             }

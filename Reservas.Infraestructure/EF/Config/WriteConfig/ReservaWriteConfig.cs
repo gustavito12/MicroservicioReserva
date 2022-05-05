@@ -29,7 +29,7 @@ namespace Reservas.Infraestructure.EF.Config.WriteConfig
                    .HasColumnName("idReserva")
                    .HasColumnType("int");
 
-            //builder.HasMany(typeof(DetalleReserva), "_detalle");
+            builder.HasMany(typeof(DetalleReserva), "_detalle");
 
             builder.Ignore("_domainEvents");
             builder.Ignore(x => x.DomainEvents);

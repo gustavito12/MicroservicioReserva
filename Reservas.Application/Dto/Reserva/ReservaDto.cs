@@ -11,11 +11,11 @@ namespace Reservas.Application.Dto.Reserva
     {
         public Guid Id { get; set; }
         public int IdReserva { get;  set; }
-        public DetalleReserva Detalle { get;  set; }
-
+        public DetalleReservaDto Detalle { get;  set; }
+        
         public ReservaDto()
         {
-            Detalle = new DetalleReserva();
+            Detalle = new DetalleReservaDto();
         }
     }
 }

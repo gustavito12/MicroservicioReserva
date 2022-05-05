@@ -12,16 +12,16 @@ namespace Reservas.Domain.Model.Reservas
     {
         //TODO: Crear value objects para las propiedades
      
-        public DateTime FechaReserva { get; private set; }
-        public MinimoPago Importe { get; private set; }
-        public int Estado { get; private set; }
-        public int NumTicket { get; private set; }
+        public DateTime FechaReserva { get;  set; }
+        public MinimoPago Importe { get;  set; }
+        public int Estado { get;  set; }
+        public int NumTicket { get;  set; }
 
         internal DetalleReserva(DateTime fechaReserva, decimal importe,int estado, int numTicket)
         {
             Id = Guid.NewGuid();
             FechaReserva = fechaReserva;
-            Importe = new MinimoPago(0m);
+            Importe = importe;
             Estado = estado;
             NumTicket = numTicket;   
         }

@@ -37,10 +37,5 @@ namespace Reservas.Infraestructure.EF.Repository
 
             return Task.CompletedTask; 
         }
-
-        //Task<Reserva> IRepository<Reserva, Guid>.FindByIdAsync(Guid id)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }

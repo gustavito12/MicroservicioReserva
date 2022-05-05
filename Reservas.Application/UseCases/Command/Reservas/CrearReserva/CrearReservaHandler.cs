@@ -38,7 +38,7 @@ namespace Reservas.Application.UseCases.Command.Reservas.CrearReserva
                 int IdReserva = await _reservaService.GenerarIdReservaAsync();
                 Reserva objReserva = _reservaFactory.Create(IdReserva);                         
 
-               //objReserva.CargaReservaDetalle(request.Detalle.FechaReserva, request.Detalle.Importe, request.Detalle.Estado, request.Detalle.NumTicket);
+                objReserva.CargaReservaDetalle(request.Detalle.FechaReserva, request.Detalle.Importe, request.Detalle.Estado, request.Detalle.NumTicket);
 
                 objReserva.RegistrarReserva();
 

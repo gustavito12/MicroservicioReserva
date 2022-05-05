@@ -19,6 +19,7 @@ namespace Reservas.Infraestructure.EF.Config.ReadConfig
 
             //builder.HasMany(x => x.Detalle)
             //        .WithOne(x => x.Reserva);
+            builder.Ignore("_domainEvents");
 
         }
 
