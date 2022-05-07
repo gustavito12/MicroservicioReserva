@@ -17,8 +17,9 @@ namespace Reservas.Infraestructure.EF.Config.ReadConfig
                    .HasColumnName("idReserva")
                    .HasColumnType("int");
 
-            //builder.HasMany(x => x.Detalle)
-            //        .WithOne(x => x.Reserva);
+            builder.HasMany(x => x.Detalle)
+                    .WithOne(x => x.Reserva);
+
             builder.Ignore("_domainEvents");
 
         }
