@@ -7,3 +7,6 @@ Casos de Uso de tipo Comnand:
 - Crear Cliente
 - Modificar Cliente
 - Eliminar Cliente
+
+Adición de UnitTest
+- Pruebas unitarias basicas primer avance

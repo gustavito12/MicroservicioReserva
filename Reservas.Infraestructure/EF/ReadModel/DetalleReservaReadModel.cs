@@ -10,7 +10,7 @@ namespace Reservas.Infraestructure.EF.ReadModel
     {
         public Guid Id { get; set; }
         public DateTime FechaReserva { get; set; }
-        public decimal Importe { get; set; }
+        public  decimal Importe { get; set; }
         public int Estado { get; set; }
         public int NumTicket { get; set; }
         public ReservaReadModel Reserva { get; set; }
